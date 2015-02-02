@@ -8,7 +8,6 @@
 	<property name="lib" location="lib" />
 	<property name="build" location="build" />
 	<property name="meta.inf" location="${build}/META-INF" />
-	<property name="uima.desc" location="${build}/desc" />
 	<property name="dist" location="dist" />
 	<property name="docs" location="docs" />
 	<!-- properties for compilation -->
@@ -48,11 +47,7 @@
 		<mkdir dir="${build}" />
 		<mkdir dir="${dist}" />
 		<mkdir dir="${meta.inf}" />
-		<mkdir dir="${uima.desc}" />
 		<copy todir="${meta.inf}" file="./LICENSE" />
-		<copy todir="${uima.desc}">
-			<fileset dir="./desc" />
-		</copy>
 	</target>
 
 
@@ -94,7 +89,7 @@
 		<jar basedir="${build}"
 			destfile="${dist}/${app.name}-${implementation.version}-standalone.jar"
 			description="Generate .jar file.">
-			<zipfileset src="${lib}/uima-core-2.6.jar" />
+			<zipfileset src="${lib}/lingpipe-4.1.0.jar" />
 			<fileset dir="${src}" />
 			<manifest>
 				<attribute name="Author" value="Chen Li" />
